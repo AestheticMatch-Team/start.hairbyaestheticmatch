@@ -1,0 +1,175 @@
+@use '../styles/tokens' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: $bg;
+  border-bottom: 1px solid $border;
+}
+
+.inner {
+  @extend %container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 65px;
+
+  @media (max-width: $bp-md) {
+    padding: 16px;
+  }
+}
+
+.logoWrap {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: $font-ivy;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: $text;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+
+  @media (max-width: $bp-sm) {
+    overflow: hidden;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $bp-md) {
+    display: none;
+  }
+}
+
+.link {
+  font-family: $font-sans;
+  font-size: 16px;
+  color: $text-muted;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color 200ms ease;
+
+  &:hover {
+    color: $navy;
+  }
+}
+
+.ctaWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cta {
+  font-family: $font-sans;
+  font-size: 16px;
+  font-weight: 500;
+  background: $navy;
+  color: #fff;
+  border-radius: 100px;
+  padding: 16px 32px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 200ms ease, transform 150ms ease;
+
+  &:hover {
+    background: $navy-hover;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  @media (max-width: $bp-sm) {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+}
+
+.avatarWrap {
+  position: relative;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: $navy;
+  color: #fff;
+  font-family: $font-sans;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms ease, transform 150ms ease;
+
+  &:hover {
+    background: $navy-hover;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.avatarMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid $border;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.avatarMenuItem {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $text;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 150ms ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

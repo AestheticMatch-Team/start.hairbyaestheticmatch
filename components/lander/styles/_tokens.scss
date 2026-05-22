@@ -1,0 +1,66 @@
+// Lander design tokens — import this in every lander CSS module
+
+$navy:           #1a2332;
+$navy-hover:     #131b27;
+$steel:          #5a7a96;
+$tint:           #dce4eb;
+$border:         #eceeed;
+$text:           #111111;
+$text-secondary: #7e838a;
+$text-muted:     #5c5856;
+$bg:             #ffffff;
+$off-white:      #f7f7f6;
+
+$font-serif: var(--font-instrument-serif), serif;
+$font-sans:  var(--font-manrope-lander), sans-serif;
+$font-ivy:   IvyPresto_Headline, serif;
+
+$gradient-navy:       linear-gradient(180deg, #1A2332 70.71%, rgba(90, 122, 150, 0.50) 141.41%), #1A2332;
+$gradient-button:     linear-gradient(180deg, #1A2332 40%, #5A7A96 100%), #1A2332;
+
+$gradient-card:       linear-gradient(180deg, #1A2332 47.16%, rgba(90, 122, 150, 0.50) 117.82%), #1A2332;
+$gradient-section:    linear-gradient(199deg, rgb(26,35,50) 52%, rgb(90,122,150) 171%);
+$gradient-icon:       linear-gradient(180deg, rgb(26,35,50) 40%, rgb(90,122,150) 100%);
+$gradient-membership: linear-gradient(180deg, #1A2332 49.02%, rgba(90, 122, 150, 0.50) 141.41%), #1A2332;
+
+$ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+// %glass — subtle two-tone glass for content cards on navy sections (Figma 694:774).
+// Lighter top, darker bottom + flat 2% white veil for the soft sheen Figma's GLASS adds.
+%glass {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%),
+    linear-gradient(180deg, rgba(90, 122, 150, 0.12) 0%, rgba(29, 39, 48, 0.12) 100%);
+  backdrop-filter: blur(6px) saturate(110%);
+  -webkit-backdrop-filter: blur(6px) saturate(110%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+// %glass-tile — lifted liquid-glass for hero/pricing surfaces (Figma 694:1078).
+// Inverted gradient (lighter bottom) for from-below specular feel, deeper edge highlights, soft drop shadow.
+%glass-tile {
+  background: linear-gradient(0deg, rgba(90, 122, 150, 0.12) 0%, rgba(29, 39, 48, 0.12) 100%);
+  backdrop-filter: blur(8px) saturate(115%);
+  -webkit-backdrop-filter: blur(8px) saturate(115%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.20);
+}
+
+$bp-md: 992px;
+$bp-sm: 767px;
+$container-max: 1560px;
+
+// %container — shared outer container for full-bleed sections (header, footer).
+// Caller applies its own horizontal padding; with 120px sides this yields the
+// 1320px content width that page sections use directly.
+%container {
+  width: 100%;
+  max-width: $container-max;
+  margin-left: auto;
+  margin-right: auto;
+}

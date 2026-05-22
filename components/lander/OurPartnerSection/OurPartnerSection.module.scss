@@ -1,0 +1,72 @@
+@use '../styles/tokens' as *;
+
+.section {
+  background: $bg;
+  padding: 24px 96px 48px;
+
+  @media (max-width: $bp-md) {
+    padding: 16px 0 12px;
+  }
+}
+
+/* ── Desktop ── */
+.desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+
+  @media (max-width: $bp-md) {
+    display: none;
+  }
+}
+
+.label {
+  font-family: $font-sans;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 3.4px;
+  text-transform: uppercase;
+  color: rgba(126, 131, 138, 0.32);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 29px;
+  width: auto !important;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+
+  @media (max-width: $bp-md) {
+    height: 16px;
+  }
+}
+
+/* ── Mobile marquee ── */
+.mobile {
+  display: none;
+  overflow: hidden;
+
+  @media (max-width: $bp-md) {
+    display: block;
+  }
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+
+  @media (max-width: $bp-md) {
+   height: 40px;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

@@ -1,0 +1,85 @@
+/* Lander design tokens + base reset (main app provides these via app/globals.scss) */
+@layer base {
+  :root {
+    --lander-navy: #1a2332;
+    --lander-navy-hover: #131b27;
+    --lander-steel: #5a7a96;
+    --lander-tint: #dce4eb;
+    --lander-border: #eceeed;
+    --lander-text: #111111;
+    --lander-text-secondary: #7e838a;
+    --lander-text-muted: #5c5856;
+    --lander-bg: #ffffff;
+    --lander-off-white: #f7f7f6;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    width: 100%;
+    background: var(--lander-bg);
+    color: var(--lander-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+}
