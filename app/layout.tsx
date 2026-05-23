@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Manrope } from "next/font/google";
 import "@/components/lander/styles/globals.css";
+import ClickflareDirectTracking from "@/components/lander/ClickflareDirectTracking";
 import { landerOrigin } from "@/lib/funnel";
 
 const instrumentSerif = Instrument_Serif({
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${instrumentSerif.variable} ${manrope.variable}`}>
         {children}
+        <ClickflareDirectTracking />
       </body>
     </html>
   );

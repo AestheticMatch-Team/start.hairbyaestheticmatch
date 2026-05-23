@@ -17,6 +17,30 @@ Configure via `.env` (see `.env.example`).
 
 Signup, paywall, quiz, and payments run only on the main hair app.
 
+## ClickFlare direct tracking
+
+By default, this affiliate lander loads ClickFlare Direct tracking and Get
+Started CTAs use `https://go.consumerwatchtoday.com/cf/click`. The active
+ClickFlare campaign is:
+
+```bash
+NEXT_PUBLIC_CLICKFLARE_CAMPAIGN_ID=6a122a576fdcf70012dc7ab0
+NEXT_PUBLIC_CLICKFLARE_DIRECT_TRACKING=true
+NEXT_PUBLIC_CLICKFLARE_USE_CLICK_URLS=true
+NEXT_PUBLIC_CLICKFLARE_TRACKING_ORIGIN=https://go.consumerwatchtoday.com
+NEXT_PUBLIC_CLICKFLARE_CONTAINER_ID=<container-id>
+NEXT_PUBLIC_CLICKFLARE_CTA_ID=
+```
+
+Configure the ClickFlare offer URL to point at the production funnel, including
+affiliate UTMs and a ClickFlare click ID parameter, for example:
+
+`https://www.hairbyaestheticmatch.com/get-started?utm_source=nick_affiliate&utm_medium=affiliate&utm_campaign=hair_lander&utm_content={cf_click_id}&cf_click_id={cf_click_id}`
+
+If ClickFlare does not replace macros in the selected Direct setup, keep
+`cf_click_id` in a normal URL parameter that prod can store, or add a small
+client handoff script that reads `window.clickflare.tracking_params.click_id`.
+
 ## Local development
 
 ```bash
