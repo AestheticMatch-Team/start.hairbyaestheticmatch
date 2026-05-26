@@ -1,14 +1,19 @@
-import { getStartedHref } from "@/lib/funnel";
+import { hairGetStartedUrl } from "@/lib/funnel";
 
 type Props = {
   className?: string;
   children: React.ReactNode;
+  clickflareCtaId?: number | string;
 };
 
-/** Get Started with affiliate UTMs — external hair host, or local `/get-started` when hosted funnel is enabled. */
-export default function HairGetStartedLink({ className, children }: Props) {
+/** Get Started CTA: local `/get-started` by default, or ClickFlare click URL when enabled. */
+export default function HairGetStartedLink({
+  className,
+  children,
+  clickflareCtaId,
+}: Props) {
   return (
-    <a href={getStartedHref()} className={className}>
+    <a href={hairGetStartedUrl(undefined, { clickflareCtaId })} className={className}>
       {children}
     </a>
   );

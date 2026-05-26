@@ -11,6 +11,30 @@ Partner-facing Next.js app: **full hair funnel** (lander through dashboard) on `
   - `/api/`* → `HAIR_BACKEND_ORIGIN`
   - `/auth/*` → same (magic links, OAuth)
 
+## ClickFlare direct tracking
+
+By default, this affiliate lander loads ClickFlare Direct tracking and Get
+Started CTAs use `https://go.consumerwatchtoday.com/cf/click`. The active
+ClickFlare campaign is:
+
+```bash
+NEXT_PUBLIC_CLICKFLARE_CAMPAIGN_ID=6a122a576fdcf70012dc7ab0
+NEXT_PUBLIC_CLICKFLARE_DIRECT_TRACKING=true
+NEXT_PUBLIC_CLICKFLARE_USE_CLICK_URLS=true
+NEXT_PUBLIC_CLICKFLARE_TRACKING_ORIGIN=https://go.consumerwatchtoday.com
+NEXT_PUBLIC_CLICKFLARE_CONTAINER_ID=<container-id>
+NEXT_PUBLIC_CLICKFLARE_CTA_ID=
+```
+
+Configure the ClickFlare **offer URL** to this deploy’s funnel (not the main hair
+host), including ad UTMs and a click ID when supported, for example:
+
+`https://start.hairbyaestheticmatch.com/get-started?utm_source=...&utm_medium=...&cf_click_id={cf_click_id}`
+
+`affiliate_partner` is set via `NEXT_PUBLIC_AFFILIATE_PARTNER` at signup — do not
+fake `utm_source=start`. If ClickFlare does not replace macros, keep `cf_click_id`
+as a normal query param or read `window.clickflare.tracking_params.click_id`.
+
 ## Local development
 
 ```bash

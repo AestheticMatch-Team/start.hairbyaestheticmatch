@@ -4,6 +4,7 @@ import "@/components/lander/styles/globals.css";
 import "@/components/styles/ivy-fonts.css";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
 import UTMTracker from "@/components/UTMTracker";
+import ClickflareDirectTracking from "@/components/lander/ClickflareDirectTracking";
 import { landerOrigin } from "@/lib/funnel";
 
 const instrumentSerif = Instrument_Serif({
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ) : null}
         {children}
         <UTMTracker />
+        <ClickflareDirectTracking />
       </body>
     </html>
   );
