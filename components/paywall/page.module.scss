@@ -1,0 +1,1738 @@
+.page {
+  min-height: 100dvh;
+  background: #f7f7f6;
+  color: #111111;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+  transition: padding-bottom 0.2s ease;
+  button{
+    text-align: center;
+  }
+}
+
+.pageWithStickyInset {
+  padding-bottom: calc(132px + env(safe-area-inset-bottom));
+}
+
+.header {
+  height: 96px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  padding: 0 64px;
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-family: "IvyPresto Headline", "Instrument Serif", var(--font-cormorant), Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+
+.main {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 80px 64px 56px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #6b6b6b;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: #111111;
+}
+
+.stack {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.splitTop {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.leftCol {
+  width: 605px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.rightCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.promo {
+  border: 1px solid rgba(90, 122, 150, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  background-image: linear-gradient(90deg, rgba(90, 122, 150, 0.12), rgba(90, 122, 150, 0.12)),
+    linear-gradient(90deg, #fff, #fff);
+  padding: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.promoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  background: #1a2332;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.promoTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.promoSub {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  color: #6b6b6b;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.checkout {
+  padding: 40px;
+}
+
+.embeddedPaymentShell {
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.embeddedPaymentShellMobile {
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.formError {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f4d3cf;
+  background: #fff6f5;
+  color: #b42318;
+  font-size: 13px;
+  text-align: center;
+}
+
+.formSkeleton {
+  min-height: 420px;
+  border: 1px solid #e7e1d8;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f8f4ed 0%, #f3eee5 50%, #f8f4ed 100%);
+  background-size: 200% 100%;
+  animation: paywallSkeletonPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes paywallSkeletonPulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+.serif24 {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.sub13 {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.payButtons {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.payBtn {
+  height: 50px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.15);
+}
+
+.payBtnStrong {
+  border-color: #1a2332;
+  color: #1a2332;
+  font-weight: 600;
+}
+
+.divider {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(17, 17, 17, 0.4);
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  background: #e9e9e9;
+  flex: 1;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldRowTriple {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.label {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.input {
+  height: 44px;
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  padding: 0 16px;
+  color: rgba(17, 17, 17, 0.4);
+  font-size: 14px;
+  line-height: 44px;
+}
+
+.helperRow {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.pill {
+  background-image: linear-gradient(90deg, rgba(90, 122, 150, 0.08), rgba(90, 122, 150, 0.08)),
+    linear-gradient(90deg, #fff, #fff);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #5a7a96;
+}
+
+.cta {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border: 0;
+  width: 100%;
+  border-radius: 12px;
+  background: #1a2332;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.terms {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.terms span {
+  color: #5a7a96;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.tags {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  border: 1px solid #e9e9e9;
+  border-radius: 100px;
+  background: #fafafa;
+  padding: 6px 14px;
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.guarantee {
+  background: #5a7a96;
+  border: 1px solid rgba(94, 196, 154, 0.12);
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.gKicker {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.gTitle {
+  margin: 12px 0 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 42px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.gText {
+  margin: 12px 0 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.summary {
+  padding: 40px;
+}
+
+.kicker16 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.summaryRows {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 24px;
+  font-size: 14px;
+}
+
+.summaryRowRight {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.muted {
+  color: #6b6b6b;
+}
+
+.summaryRule {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #e9e9e9;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryHint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.96px;
+  color: rgba(17, 17, 17, 0.4);
+}
+
+.price24 {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 24px;
+}
+
+.hsa {
+  margin-top: 24px;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 12px;
+  background: #1a2332;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.included {
+  padding: 32px;
+}
+.includedGiftRow{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+}
+.includedHead {
+  width: 100%;
+  margin: 0;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.includedChevron {
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #6b6b6b;
+  transition: transform 0.15s ease;
+}
+
+.includedChevronOpen {
+  transform: rotate(180deg);
+}
+
+.includedTitle {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.includedMeta {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b6b6b;
+}
+
+.includedRule {
+  margin: 16px 0 0;
+  border: 0;
+  border-top: 1px solid #e9e9e9;
+}
+
+.includedList {
+  margin-top: 12px;
+}
+
+.includedRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px;
+}
+
+.includedRow + .includedRow {
+  border-top: 1px solid rgba(233, 233, 233, 0.7);
+}
+
+.includedIconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: #fafafa;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.includedIconWrap img {
+  width: 16px;
+  height: 16px;
+}
+
+.includedText {
+  flex: 1;
+  min-width: 0;
+}
+
+.includedText h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.includedText p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.includedPrice {
+  width: 100px;
+  text-align: right;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.includedPrice s {
+  font-size: 14px;
+  color: #111;
+}
+
+.includedPrice p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #5a7a96;
+}
+
+.includedFoot {
+  margin-top: 12px;
+  border-top: 1px solid #e9e9e9;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.includedFoot strong {
+  font-size: 16px;
+}
+
+.includedFootRight {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.includedFootRight s {
+  color: #6b6b6b;
+  font-size: 16px;
+}
+
+.includedFootRight span {
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 18px;
+}
+
+.section {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 30px;
+  padding: 48px;
+}
+
+.sectionHead h3 {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.sectionHead p {
+  margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b6b6b;
+}
+
+.sectionRule {
+  margin: 24px 0 0;
+  border: 0;
+  border-top: 1px solid #e9e9e9;
+}
+
+.mathCols {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.mathCard {
+  border: 1px solid #e9e9e9;
+  border-radius: 24px;
+  background: rgba(90, 122, 150, 0.08);
+  padding: 32px;
+}
+
+.mathBadge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5a7a96;
+  letter-spacing: 0.16px;
+}
+
+.mathList {
+  margin-top: 24px;
+}
+
+.mathItem + .mathItem {
+  border-top: 1px solid #e9e9e9;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.mathValue {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+}
+
+.mathDesc {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.5;
+}
+
+.subSection {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.subSectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subSectionHead p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border: 0;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(90, 122, 150, 0.16), rgba(90, 122, 150, 0.16)),
+    linear-gradient(90deg, #fff, #fff);
+  color: #5a7a96;
+  transition: all 0.3s ease;
+  &:hover{
+   scale: 1.1;
+  }
+}
+
+.testiGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.testiCard {
+  border: 1px solid #e9e9e9;
+  border-radius: 30px;
+  padding: 32px;
+  background: #fff;
+}
+
+.stars {
+  margin: 0;
+  color: #5a7a96;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.label10 {
+  margin: 12px 0 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  color: #717171;
+  text-transform: uppercase;
+}
+
+.quote {
+  margin: 12px 0 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #1a1818;
+}
+
+.author {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 200px;
+  object-fit: cover;
+}
+
+.authorName {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.authorMeta {
+  margin: 1px 0 0;
+  font-size: 11px;
+  color: #a39890;
+}
+
+.faqTitle {
+  margin: 0;
+  text-align: center;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+  color: #5a7a96;
+}
+
+.faqList {
+  margin-top: 24px;
+}
+
+.faqItem {
+  padding: 24px 8px;
+  border-top: 1px solid #e9e9e9;
+}
+
+.faqQRow {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.faqCaret,
+.faqCaretUp {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: #6b6b6b;
+  transition: transform 0.15s ease;
+}
+
+.faqCaretUp {
+  transform: rotate(180deg);
+}
+
+.faqQ {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.faqA {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.report {
+  height: 396px;
+  border-radius: 30px;
+  border: 1px solid #e9e9e9;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.03);
+  padding: 28px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.cover {
+  width: 240px;
+  height: 340px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.reportBody h3 {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.reportBody p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: #6b6b6b;
+}
+
+.reportList {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reportList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #515151;
+}
+
+.reportList img {
+  width: 16px;
+  height: 16px;
+}
+
+.bottomCtaWrap {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bottomCta {
+  display: flex;
+  width: 500px;
+  max-width: 100%;
+  align-items: center;
+  height: 50px;
+  justify-content: center;
+  border-radius: 12px;
+  border: 0;
+  background: #1a2332;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bottomMeta {
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  white-space: pre;
+  color: #6b6b6b;
+}
+
+.dot {
+  color: #1a2332;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.metaText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.desktopView {
+  display: block;
+}
+
+.mobileView {
+  display: none;
+}
+
+.mobileHeader {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px 24px 21px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.mobileBrand {
+  margin: 0;
+  width: 194px;
+  height: 32px;
+  font-family: "IvyPresto Headline", "Instrument Serif", var(--font-cormorant), Georgia, serif;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+
+.mobileSection {
+  width: 100%;
+  max-width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.mobileKicker {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.mobileGuarantee {
+  margin-top: 24px;
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  background: #5a7a96;
+  padding: 24px;
+}
+
+.mobileGk {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.mobileGt {
+  margin: 12px 0 0;
+  font-family: "IvyPresto Display", "Instrument Serif", var(--font-cormorant), Georgia, serif;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.mobileGd {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.mobilePriceBlock {
+  margin-top: 32px;
+}
+
+.mobilePrice {
+  margin: 0;
+  font-family: "IvyPresto Display", "Instrument Serif", var(--font-cormorant), Georgia, serif;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #1a1818;
+}
+
+.mobileOneTime {
+  margin: 4px 0 0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.11px;
+  color: #6b6b6b;
+}
+
+.mobileUnlock {
+  margin: 24px 0 0;
+  font-family: "IvyPresto Display", "Instrument Serif", var(--font-cormorant), Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.mobilePills {
+  margin-top: 8px;
+  width: 254px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mobilePills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 29px;
+  border: 1px solid rgba(231, 225, 216, 0.5);
+  border-radius: 100px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #6b6b6b;
+  background: #fff;
+}
+
+.mobilePills span::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2f3f52;
+}
+
+.mobilePayCard {
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mobilePayTitle {
+  margin: 0;
+  font-family: "IvyPresto Display", "Instrument Serif", var(--font-cormorant), Georgia, serif;
+  font-size: 20px;
+}
+
+.mobilePayButtons {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.mobilePayBtn,
+.mobilePayBtnStrong {
+  height: 37px;
+  border-radius: 10px;
+  border: 1px solid #e9e9e9;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.mobilePayBtnStrong {
+  border-color: #1a2332;
+  color: #1a2332;
+  font-weight: 600;
+}
+
+.mobileAssessBtn {
+  margin-top: 12px;
+  width: 100%;
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid rgba(196, 162, 101, 0.12);
+  background: rgba(196, 162, 101, 0.12);
+  color: #c4a265;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.mobileAltPay {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.mobileAltPay > p {
+  margin: 0;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.mobileAltPay > div {
+  margin: 4px 0 8px;
+  display: inline-flex;
+  gap: 4px;
+}
+
+.mobileAltPay span {
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #5a7a96;
+  background-image: linear-gradient(90deg, rgba(90, 122, 150, 0.08), rgba(90, 122, 150, 0.08)),
+    linear-gradient(90deg, #fff, #fff);
+}
+
+.mobilePrimaryCtaWrap {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.mobilePrimaryCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 12px;
+  background: #1a2332;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobileTerms {
+  margin: 0;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.mobileTerms span {
+  color: #1a6b5a;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.mobileIncludedCard {
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  background: #fff;
+  padding: 24px;
+}
+
+.mobileIncludedHead {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.mobileIncludedTitle {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 18px;
+}
+
+.mobileIncludedMeta {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b6b6b;
+}
+
+.mobileIncludedCard hr {
+  border: 0;
+  border-top: 1px solid #e9e9e9;
+  margin: 16px 0 0;
+}
+
+.mobileIncludedList {
+  margin-top: 12px;
+}
+
+.mobileIncludedItem {
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 8px;
+  text-align: right;
+
+
+  div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+  }
+}
+
+.mobileIncludedItem + .mobileIncludedItem {
+  border-top: 1px solid rgba(233, 233, 233, 0.7);
+}
+
+.mobileIncludedItem > div:first-child p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mobileIncludedItem > div:first-child small {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b6b6b;
+  line-height: 1.5;
+}
+
+.mobileIncludedItem > div:last-child {
+  width: 80px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.mobileIncludedItem > div:last-child s {
+  font-size: 14px;
+}
+
+.mobileIncludedItem > div:last-child small {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #5a7a96;
+}
+
+.mobileIncludedFoot {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileIncludedFoot strong {
+  font-size: 16px;
+}
+
+.mobileIncludedFoot div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.mobileIncludedFoot s {
+  font-size: 16px;
+  color: #6b6b6b;
+}
+
+.mobileIncludedFoot span {
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 18px;
+}
+
+.mobileMath {
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  background: #fff;
+  padding: 24px;
+}
+
+.mobileMathTitle {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+}
+
+.mobileMathSub {
+  margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b6b6b;
+}
+
+.mobileMathCard {
+  margin-top: 20px;
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  background: rgba(90, 122, 150, 0.08);
+  padding: 20px;
+}
+
+.mobileMathCard span {
+  display: inline-block;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5a7a96;
+}
+
+.mobileMathCard h4 {
+  margin: 20px 0 8px;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.mobileMathCard p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.mobileTestimonials {
+  width: 100%;
+  max-width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #fcfaf7;
+}
+
+.mobileTestiHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobileTestiHead p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.mobileTestiHead > div {
+  display: flex;
+  gap: 8px;
+}
+
+.mobileTestiHead button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 100px;
+  background: rgba(90, 122, 150, 0.2);
+  color: #5a7a96;
+}
+
+.mobileTestiRail {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scrollbar-width: thin;
+}
+
+.mobileTestiRail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.mobileTestiRail::-webkit-scrollbar-thumb {
+  background: rgba(90, 122, 150, 0.35);
+  border-radius: 999px;
+}
+
+.mobileTestiCard {
+  width: min(320px, calc(100vw - 96px));
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border: 1px solid #e9e9e9;
+  border-radius: 24px;
+  background: #fff;
+  padding: 24px;
+}
+
+.mobileFaqTitle {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+  color: #5a7a96;
+}
+
+.mobileHr {
+  margin: 24px 0 0;
+  border: 0;
+  border-top: 1px solid #e9e9e9;
+}
+
+.mobileFaqList {
+  margin-top: 24px;
+}
+
+.mobileFaqItem {
+  padding: 16px 8px;
+  border-top: 0.8px solid #e9e9e9;
+}
+
+.mobileFaqRow {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.mobileFaqChevron,
+.mobileFaqChevronOpen {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  color: #6b6b6b;
+  transition: transform 0.15s ease;
+}
+
+.mobileFaqChevronOpen {
+  transform: rotate(180deg);
+}
+
+.mobileFaqQ {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.mobileFaqA {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.mobileReport {
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  background: #fff;
+  padding: 24px;
+}
+
+.mobileReportCover {
+  width: 240px;
+  height: 340px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.mobileReportTitle {
+  margin: 0;
+  font-family: "Instrument Serif", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.mobileReportSub {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b6b6b;
+}
+
+.mobileReportList {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobileReportList li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #515151;
+}
+
+.mobileReportList li img {
+  width: 16px;
+  height: 16px;
+}
+
+.mobileFooterCta {
+  width: 100%;
+  max-width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+}
+
+.mobileFootMeta {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.mobileStickyCta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  padding: 12px 24px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(252, 250, 247, 0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(231, 225, 216, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.mobileStickyBtn {
+  width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  background: #1a2332;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.mobileStickySubStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.mobileStickySubRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.mobileStickyGuarantee {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #6b6b6b;
+}
+
+.mobileStickyTerms {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #5a7a96;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.desktopStickyCta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  padding: 12px 64px;
+  background: rgba(247, 247, 246, 0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(231, 225, 216, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.desktopStickyBtn {
+  width: 500px;
+  max-width: 100%;
+  height: 50px;
+  border-radius: 12px;
+  background: #1a2332;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.desktopStickyMeta {
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  white-space: pre;
+  color: #6b6b6b;
+}
+
+@media (max-width: 1200px) {
+  .splitTop,
+  .mathCols,
+  .testiGrid,
+  .report {
+    display: block;
+  }
+
+  .leftCol,
+  .rightCol {
+    width: 100%;
+  }
+
+  .rightCol {
+    margin-top: 32px;
+  }
+
+  .mathCard + .mathCard,
+  .testiCard + .testiCard {
+    margin-top: 20px;
+  }
+
+  .report {
+    height: auto;
+  }
+
+  .cover {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    overflow-x: clip;
+  }
+
+  .pageWithStickyInset {
+    padding-bottom: calc(168px + env(safe-area-inset-bottom));
+  }
+
+  .desktopView {
+    display: none;
+  }
+
+  .mobileView {
+    display: block;
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .header,
+  .main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .main {
+    padding-top: 40px;
+  }
+
+  .section,
+  .checkout,
+  .summary {
+    padding: 28px 24px;
+  }
+
+  .fieldRowTriple,
+  .payButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .desktopStickyCta {
+    display: none;
+  }
+}

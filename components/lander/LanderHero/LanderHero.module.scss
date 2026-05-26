@@ -246,9 +246,11 @@
   letter-spacing: 0.56px;
   color: $steel;
   pointer-events: none;
-  width: 85px;
+  width: 102px;
   text-align: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (min-width: calc($bp-md + 1px)) {
     font-size: 20px;
     letter-spacing: 0.8px;

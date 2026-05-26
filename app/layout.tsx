@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Instrument_Serif, Manrope } from "next/font/google";
 import "@/components/lander/styles/globals.css";
+import "@/components/styles/ivy-fonts.css";
+import AnalyticsLoader from "@/components/AnalyticsLoader";
+import UTMTracker from "@/components/UTMTracker";
 import { landerOrigin } from "@/lib/funnel";
 
 const instrumentSerif = Instrument_Serif({
@@ -8,11 +11,22 @@ const instrumentSerif = Instrument_Serif({
   weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-instrument-serif",
+  display: "swap",
 });
 
+/** Same CSS vars as main app root layout — required by get-started.module.scss */
 const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-manrope-lander",
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
 });
 
 const TITLE = "The Smarter Approach to Hair Loss | AestheticMatch";
@@ -42,11 +56,42 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
+const loadAnalytics =
+  process.env.NEXT_PUBLIC_ENVIRONMENT === "production" ||
+  process.env.NEXT_PUBLIC_ENVIRONMENT === "staging";
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-5FT2R3TB";
+const amplitudeKey = process.env.NEXT_PUBLIC_AMPLITUDE_KEY ?? "2007fcf6bf69c8ec2249ed92427c51b3";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${instrumentSerif.variable} ${manrope.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "window.dataLayer=window.dataLayer||[];",
+          }}
+        />
+      </head>
+      <body
+        className={`${instrumentSerif.variable} ${manrope.variable} ${cormorantGaramond.variable}`}
+      >
+        {loadAnalytics && gtmId ? (
+          <noscript>
+            <iframe
+              title="gtm"
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
+        {loadAnalytics && gtmId ? (
+          <AnalyticsLoader gtmId={gtmId} amplitudeKey={amplitudeKey} />
+        ) : null}
         {children}
+        <UTMTracker />
       </body>
     </html>
   );

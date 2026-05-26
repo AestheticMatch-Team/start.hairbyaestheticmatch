@@ -1,0 +1,2390 @@
+$bg: #fcfaf7;
+$ink: #111;
+$muted: #6b6b6b;
+$line: #e7e1d8;
+$green: #0a473b;
+$greenMid: #1a6b5a;
+$tabInactive: rgba(17, 17, 17, 0.4);
+$goldLabel: #b1883e;
+$pillBorder: #e2d5c2;
+$reportMuted: #515151;
+$serif: "IvyPresto Display", "IvyPresto Headline", var(--font-cormorant), Georgia, serif;
+$sans: var(--font-manrope, "Manrope", sans-serif);
+
+.page {
+  position: relative;
+  min-height: 100dvh;
+  background: $bg;
+  font-family: $sans;
+  color: $ink;
+  overflow-x: hidden;
+}
+
+
+
+.mobileOnly {
+  display: none;
+}
+
+.desktopOnly {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobileOnly {
+    display: block;
+  }
+  .desktopOnly {
+    display: none;
+  }
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+
+
+.ambientBlob {
+  position: absolute;
+  width: 2007px;
+  height: 1221px;
+  left: 50%;
+  top: -610px;
+  transform: translateX(-50%);
+  opacity: 0.9;
+}
+
+.ambientImg {
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* Header bar */
+.shellHeader {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 32px 65px;
+  box-sizing: border-box;
+}
+
+.logoWordmark {
+  font-family: "IvyPresto Headline", $serif;
+  font-size: 21.289px;
+  letter-spacing: -0.2129px;
+  font-weight: 400;
+  color: $ink;
+}
+
+.shellMain {
+  position: relative;
+  z-index: 1;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 80px 65px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+}
+
+/* Figma: 50px below Back; inner sections use 40 / 60 */
+.contentStack {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+}
+
+.primaryStack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Figma 183:409 — 20px between testimonial and each triad card */
+.valueStack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Figma 183:410 */
+.testimonialCard {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.testimonialAvatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 100px;
+  background: #c9bfae;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  span {
+    font-family: $serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $muted;
+  }
+}
+
+.testimonialBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.testimonialQuote {
+  margin: 0;
+  font-family: $serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+  white-space: pre-wrap;
+}
+
+.testimonialByline {
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.testimonialName {
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $ink;
+  letter-spacing: 0.13px;
+}
+
+.testimonialMeta {
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $muted;
+  letter-spacing: 0.13px;
+}
+
+.backRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+  color: $muted;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  width: fit-content;
+
+  &:hover {
+    color: $ink;
+  }
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Before/after hero */
+.heroCard {
+  width: 100%;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 30px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroTitle {
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: $ink;
+  margin: 0;
+  max-width: 100%;
+  line-height: normal;
+}
+
+/* Desktop: single line; mobile Figma 183:283 — two lines */
+.heroTitleBr {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .heroTitleBr {
+    display: block;
+  }
+}
+
+.heroTitleLine1,
+.heroTitleLine2 {
+  display: inline;
+}
+
+.tabRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tabPill,
+.tabPillOn {
+  border-radius: 100px;
+  padding: 10px 16px;
+  font-family: $sans;
+  font-size: 14px;
+  line-height: normal;
+  cursor: pointer;
+  border: 1px solid $line;
+  background: #fff;
+  color: $tabInactive;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.tabPillOn {
+  background: $green;
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #d9d9d9;
+  font-weight: 500;
+}
+
+.tabPill:hover:not(.tabPillOn) {
+  border-color: #d9d1c6;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+.compareWrap {
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.compareRow {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  height: min(600px, 70vh);
+  min-height: 280px;
+  box-sizing: border-box;
+}
+
+.comparePane {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.compareImageWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.compareImageBg {
+  position: absolute;
+  inset: 0;
+  background: #f5efe3;
+}
+
+.compareImage {
+  object-fit: cover;
+}
+
+.compareLabel {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 12px 20px;
+  z-index: 1;
+}
+
+.compareLabelText {
+  font-family: var(--font-poppins, "Poppins", sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.64px;
+  line-height: 1.5;
+  color: $goldLabel;
+}
+
+/* Two-column checkout */
+.checkoutRow {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.checkoutCol {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Assessment */
+.assessCard {
+  /* Figma 183:101 */
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+/* Figma 183:102 — kicker + price; items centered as column, text starts left in full-width rows */
+.assessHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 10px;
+  padding: 0 4px;
+}
+
+.assessKicker {
+  margin: 0;
+  width: 100%;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500; /* Manrope Medium */
+  line-height: 24px;
+  letter-spacing: 0.14px;
+  text-transform: uppercase;
+  text-align: left;
+  color: $muted;
+}
+
+.assessPriceBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  box-sizing: border-box;
+}
+
+.assessPriceRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Figma 183:106 — IvyPresto price block */
+.assessPriceAmountWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  color: #1a1818;
+}
+
+.assessPriceAmount {
+  margin: 0;
+  font-family: $serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #1a1818;
+}
+
+.savePill {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-family: $sans;
+  font-size: 12px;
+  font-weight: 600; /* Manrope Semibold */
+  line-height: normal;
+  color: $green;
+  background: linear-gradient(
+      90deg,
+      rgba(10, 71, 59, 0.06) 0%,
+      rgba(10, 71, 59, 0.06) 100%
+    ),
+    #fff;
+  white-space: nowrap;
+}
+
+.assessOneTime {
+  margin: 0;
+  width: 100%;
+  font-family: $sans;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: $muted;
+}
+
+/* Figma 183:110 — column gap 18px between each row and divider; items-start, full width */
+.assessFeatures {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.assessRule {
+  height: 1px;
+  width: 100%;
+  flex-shrink: 0;
+  margin: 0;
+  background: $line;
+  border: none;
+  align-self: stretch;
+}
+
+.assessFeatureRow {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px;
+}
+
+.assessFeatureIcon {
+  flex-shrink: 0;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+
+  img {
+    display: block;
+  }
+}
+
+.assessFeatureText {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  line-height: normal;
+}
+
+.assessFeatureTitle {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 600; /* Manrope Semibold */
+  line-height: normal;
+  color: $ink;
+  white-space: nowrap;
+
+  @media (max-width: 520px) {
+    white-space: normal;
+  }
+}
+
+.assessFeatureDesc {
+  margin: 0;
+  max-width: 100%;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  color: $muted;
+}
+
+.assessLegal {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $muted;
+}
+
+.assessTerms {
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 500; /* Manrope Medium */
+  line-height: 22px;
+  color: $greenMid;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: #175a4c;
+  }
+}
+
+/* Value triad */
+.triadRow {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.triadCard {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.triadNum {
+  font-family: $serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+  color: $pillBorder;
+  text-align: center;
+  width: 42px;
+}
+
+.triadTitle {
+  font-family: $serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $ink;
+  margin: 0 0 8px;
+}
+
+.triadBody {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $muted;
+}
+
+/* Report */
+.reportCard {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.03);
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.reportVisual {
+  flex-shrink: 0;
+  width: 240px;
+  height: 340px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.reportImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reportBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reportH {
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+  margin: 0;
+}
+
+.reportSub {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $muted;
+}
+
+.reportList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reportLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.reportCheck {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.reportLineText {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: $reportMuted;
+  padding-top: 2px;
+}
+
+/* Payment form — Figma 183:146 */
+.paymentShell {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.paymentTitle {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+  margin: 0;
+  text-align: left;
+}
+
+.paymentRule {
+  height: 1px;
+  background: $line;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  margin: 0;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.paymentStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Figma 183:150 — form fields area; 20px between field groups; Stripe injects its own */
+.stripeSlot {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 120px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Figma 183:170 — gap-20: summary block, rules, total */
+.orderBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+/* Figma 183:171 — gap-14: “Order summary” + line items */
+.orderSummaryTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 14px;
+}
+
+.orderSummaryLabel {
+  margin: 0;
+  width: 100%;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  text-align: left;
+  color: $muted;
+}
+
+/* Figma 183:173 — gap-8 between rows */
+.orderLines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Figma 183:174 / 183:177 — h-24, justify-between, px-2 */
+.orderLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 24px;
+  padding: 0 2px;
+  box-sizing: border-box;
+}
+
+.orderLineLabel {
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+}
+
+/* Figma 183:176 */
+.orderLineVal {
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.13px;
+  text-transform: uppercase;
+  color: $ink;
+  flex-shrink: 0;
+}
+
+/* Figma 183:179 */
+.orderLineValSecondary {
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.13px;
+  text-transform: none;
+  color: $muted;
+  flex-shrink: 0;
+}
+
+.orderLineSub .orderLineLabel {
+  color: $ink;
+}
+
+/* Figma 183:181 — semibold 14, due + total */
+.orderTotal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 24px;
+  padding: 0 2px;
+  box-sizing: border-box;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: $ink;
+}
+
+.orderTotalPrice {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.14px;
+  text-transform: uppercase;
+  color: $ink;
+}
+
+/* Figma 183:184 — gap-12, items-center */
+.ctaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Figma 183:185 — px-22 py-16, rounded-12, full width */
+.payBtn {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: $green;
+  color: #fff;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 16px 22px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.1s;
+
+  &:hover:not(:disabled) {
+    background: #083d32;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.99);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+.hairPayBtn{
+  border-radius: 12px;
+background: #1A2332;
+color: #FFF;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+
+&:hover:not(:disabled) {
+  background: #303e55;
+}
+
+
+}
+
+/* Figma 183:187 — flex gap-6, items-center, intro + link block */
+.termsLine {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.termsIntro {
+  margin: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $muted;
+  white-space: normal;
+}
+
+/* Figma 183:189 — medium, #1a6b5a, underline on both “Terms & Services” and “.” */
+.termsServiceLink {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: $greenMid;
+  text-decoration: none;
+}
+
+.termsServiceUnderline {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+/* Mobile CTA subline (Figma 539:1577) */
+/* CTA sub-copy (Figma 868:1186) */
+.ctaSubStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.ctaSubRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.ctaGuarantee {
+  margin: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $muted;
+}
+
+.ctaTerms {
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: $greenMid;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+.hairCtaTerms {
+  color: #5a7a96;
+}
+
+.ctaVerifyRow {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.ctaVerifyIcon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.ctaVerifyText {
+  margin: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $muted;
+  white-space: normal;
+  text-align: left;
+}
+
+/* Figma 183:190 — col gap-16, px-4 py-2; 183:191 two chips row gap-12 */
+.trustPills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 4px;
+  box-sizing: border-box;
+}
+
+.trustPillsRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Figma 183:192 + 198 — h-34, px-21 py-6, border #e2d5c2, rounded-40, gap-8, label 14/22 */
+.trustPill {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  box-sizing: border-box;
+  padding: 6px 21px;
+  gap: 8px;
+  border-radius: 40px;
+  border: 1px solid $pillBorder;
+  background: #fff;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: $muted;
+  white-space: nowrap;
+}
+
+.trustPillIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  line-height: 0;
+
+  img {
+    display: block;
+  }
+}
+
+.checkoutSkeleton {
+  min-height: 480px;
+  background: #f5f1ea;
+  border: 1px solid $line;
+  border-radius: 30px;
+  animation: paywallPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes paywallPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.error {
+  padding: 16px;
+  border: 1px solid #f4d3cf;
+  background: #fff6f5;
+  border-radius: 12px;
+  text-align: center;
+  color: #b42318;
+  font-size: 13px;
+}
+
+.paymentError {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid #f4d3cf;
+  background: #fff6f5;
+  border-radius: 8px;
+  text-align: center;
+  color: #b42318;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile PaymentForm label styling */
+.payBtnLabel {
+  display: inline;
+}
+
+.payBtnLabelPrice {
+  color: inherit;
+}
+
+.payBtnLabelMain {
+  color: inherit;
+}
+
+/* --- Mobile paywall (Figma node 539:1519)
+   Moved to PaywallMobileView.module.scss.
+--- */
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .checkoutRow {
+    flex-direction: column;
+  }
+
+  .compareRow {
+    flex-direction: column;
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .shellHeader {
+    padding: 24px 24px;
+  }
+
+  .shellMain {
+    padding: 48px 24px 64px;
+  }
+
+  .contentStack {
+    margin-top: 40px;
+    gap: 48px;
+  }
+
+  .primaryStack {
+    gap: 32px;
+  }
+
+  .heroCard {
+    padding: 24px 20px;
+  }
+
+  .compareWrap {
+    padding: 16px;
+  }
+
+  .compareRow {
+    gap: 16px;
+  }
+
+  .assessCard,
+  .paymentShell {
+    padding: 28px 24px;
+  }
+
+  .triadRow {
+    flex-direction: column;
+  }
+
+  .reportCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reportVisual {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 240 / 340;
+  }
+}
+
+/* Figma 183:271 — mobile frame */
+@media (max-width: 768px) {
+  .shellHeader {
+    padding: 22px 24px 23px;
+  }
+
+  .shellMain {
+    padding: 40px 24px 64px;
+  }
+
+  .contentStack {
+    margin-top: 32px;
+    gap: 32px;
+  }
+
+  .primaryStack {
+    gap: 30px;
+  }
+
+  .backRow {
+    font-size: 13px;
+    line-height: 20px;
+    min-height: 20px;
+    height: auto;
+  }
+
+  .heroCard {
+    border-radius: 20px;
+    padding: 32px;
+    gap: 28px;
+  }
+
+  .heroInner {
+    gap: 16px;
+  }
+
+  .tabPill,
+  .tabPillOn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .compareWrap {
+    padding: 0;
+  }
+
+  /* Figma 183:301 — two columns side by side, not stacked (overrides 1100px) */
+  .compareRow {
+    flex-direction: row;
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    gap: 8px;
+  }
+
+  .comparePane {
+    border-radius: 12px;
+  }
+
+  .compareLabel {
+    left: 10px;
+    top: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border-width: 0.5px;
+  }
+
+  .compareLabelText {
+    font-size: 8px;
+    letter-spacing: 0.32px;
+  }
+
+  .checkoutRow {
+    gap: 30px;
+  }
+
+  .assessCard,
+  .paymentShell {
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .assessCard {
+    gap: 28px;
+  }
+
+  .assessFeatures {
+    gap: 16px;
+  }
+
+  .assessFeatureTitle {
+    white-space: normal;
+  }
+
+  .paymentShell {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .termsLine {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .trustPills {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 4px;
+    gap: 12px;
+  }
+
+  .trustPillsRow {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .trustPill {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    padding: 7px 13px;
+    font-size: 12px;
+    line-height: 22px;
+    white-space: normal;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .triadRow {
+    gap: 20px;
+  }
+
+  .triadCard {
+    border-radius: 24px;
+    padding: 32px;
+  }
+
+  .testimonialCard {
+    padding: 32px;
+  }
+
+  .reportCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    border-radius: 20px;
+    padding: 28px;
+    gap: 28px;
+  }
+
+  .reportVisual {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .reportList {
+    gap: 14px;
+  }
+
+  .reportSub {
+    line-height: 24px;
+  }
+
+  .checkoutSkeleton {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .assessPriceAmount {
+    font-size: 40px;
+  }
+}
+
+/* Desktop checkout — Figma node 642:14373 (.desktopOnly) */
+$promoTint: #e8efe5;
+$warmAccent: #c4693c;
+$accentGold: #c4a265;
+$greenGuarantee: #1a6b5a;
+$faqMuted: #e2d5c2;
+$tStar: #d4aa4e;
+$tMuted: #a39890;
+
+.desktopShell {
+  position: relative;
+  z-index: 1;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 80px 64px 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.desktopTopSplit {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.desktopColSticky {
+  width: 605px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.desktopColRail {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.desktopBelowSplit {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.desktopPromo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  background: $promoTint;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.desktopPromoIconWrap {
+  flex-shrink: 0;
+  padding: 12px;
+  border-radius: 100px;
+  background: $green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktopPromoText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.desktopPromoTitle {
+  margin: 0;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $ink;
+}
+
+.desktopPromoSub {
+  margin: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $muted;
+}
+
+.desktopOrderCard {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.desktopOrderKicker {
+  margin: 0;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.desktopOrderInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.desktopOrderLines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.desktopOrderLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 24px;
+  padding: 0 2px;
+}
+
+.desktopOrderLineLabel {
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+}
+
+.desktopOrderLineVal {
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.13px;
+  text-transform: uppercase;
+  color: $ink;
+  flex-shrink: 0;
+}
+
+.desktopOrderLineMeta {
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.13px;
+  color: $muted;
+  flex-shrink: 0;
+}
+
+.desktopOrderRule {
+  height: 1px;
+  width: 100%;
+  margin: 20px 0;
+  border: none;
+  background: $line;
+}
+
+.desktopOrderTotalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 2px;
+}
+
+.desktopOrderTotalLabel {
+  margin: 0 0 8px;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: $ink;
+}
+
+.desktopOrderTotalHint {
+  margin: 0;
+  font-family: $sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.96px;
+  color: rgba(17, 17, 17, 0.4);
+}
+
+.desktopOrderTotalAmt {
+  margin: 0;
+  font-family: $serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $ink;
+}
+
+.desktopHsaBtn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: $green;
+  color: #fff;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 16px 22px;
+  cursor: default;
+}
+
+.desktopIncludedCard {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.desktopIncludedToggle {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.desktopIncludedHead {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.desktopIncludedGiftRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 6px;
+}
+
+.desktopIncludedGiftIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 0;
+}
+
+.desktopIncludedTitle {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-family: $serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: $ink;
+}
+
+.desktopIncludedMeta {
+  margin: 0;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $muted;
+  white-space: normal;
+}
+
+.desktopChevronDown,
+.desktopChevronUp {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: rgba(17, 17, 17, 0.5);
+  display: block;
+}
+
+.desktopChevronUp {
+  transform: rotate(180deg);
+}
+
+.desktopIncludedHr {
+  height: 1px;
+  width: 100%;
+  margin: 24px 0 0;
+  border: none;
+  background: $line;
+}
+
+.desktopIncludedToggle + .desktopIncludedHr {
+  margin-top: 16px;
+}
+
+.desktopIncludedList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding-top: 12px;
+}
+
+.desktopIncludedRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px;
+}
+
+.desktopIncludedMain {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  min-width: 0;
+}
+
+.desktopIncludedIconBadge {
+  flex-shrink: 0;
+  padding: 12px;
+  border-radius: 100px;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+
+  img {
+    display: block;
+  }
+}
+
+.desktopIncludedItemTitle {
+  margin: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $ink;
+}
+
+.desktopIncludedItemDesc {
+  margin: 0;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $muted;
+}
+
+.desktopIncludedPriceCol {
+  flex-shrink: 0;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-family: $sans;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.desktopIncludedStruck {
+  font-size: 14px;
+  color: $muted;
+  text-decoration: line-through;
+  text-decoration-skip-ink: none;
+}
+
+.desktopIncludedBadge {
+  font-size: 13px;
+  letter-spacing: -0.13px;
+  color: $accentGold;
+}
+
+.desktopIncludedItemRule {
+  height: 1px;
+  width: 100%;
+  border: none;
+  margin: 0;
+  background: rgba(231, 225, 216, 0.5);
+}
+
+.desktopIncludedFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 2px 0;
+  gap: 12px;
+}
+
+.desktopIncludedFootStrong {
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: $ink;
+}
+
+.desktopIncludedFootRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.desktopIncludedFootStruck {
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $muted;
+  text-decoration: line-through;
+  text-decoration-skip-ink: none;
+}
+
+.desktopIncludedFootYours {
+  font-family: $sans;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.18px;
+  text-transform: capitalize;
+  color: $ink;
+}
+
+.desktopGuarantee {
+  width: 100%;
+  box-sizing: border-box;
+  background: $greenGuarantee;
+  border: 1px solid rgba(94, 196, 154, 0.12);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.desktopGuaranteeKicker {
+  margin: 0 0 12px;
+  font-family: $sans;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.desktopGuaranteeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.desktopGuaranteeHeadline {
+  margin: 0;
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.desktopGuaranteeSub {
+  margin: 0;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.desktopMathWrap {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.desktopMathHead {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.desktopMathTitle {
+  margin: 0;
+  font-family: $serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+}
+
+.desktopMathSub {
+  margin: 0;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  color: $muted;
+}
+
+.desktopMathRuleTop {
+  height: 1px;
+  margin: -8px 0 0;
+  border: none;
+  background: $line;
+}
+
+.desktopMathCols {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.desktopMathColNeg {
+  flex: 1;
+  min-width: 0;
+  background: #faf7f0;
+  border: 1px solid $line;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.desktopMathColPos {
+  flex: 1;
+  min-width: 0;
+  background: rgba(94, 196, 154, 0.06);
+  border: 1px solid rgba(10, 71, 59, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.desktopMathColKicker {
+  margin: 0 0 24px;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: $warmAccent;
+}
+
+.desktopMathColKickerGreen {
+  margin: 0 0 24px;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: $greenMid;
+}
+
+.desktopMathItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.desktopMathItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.desktopMathStat {
+  margin: 0;
+  font-family: $serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $ink;
+}
+
+.desktopMathDesc {
+  margin: 0;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $muted;
+}
+
+.desktopMathSep {
+  height: 1px;
+  margin: 0;
+  border: none;
+  background: $line;
+}
+
+.desktopMathSepGreen {
+  height: 1px;
+  margin: 0;
+  border: none;
+  background: rgba(10, 71, 59, 0.12);
+}
+
+.desktopTWrap {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid $line;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.desktopTHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktopTKicker {
+  flex: 1;
+  margin: 0;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.desktopTNav {
+  display: flex;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.desktopTNavBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: none;
+  border-radius: 100px;
+  background: rgba(177, 136, 62, 0.16);
+  color: $goldLabel;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.desktopTSep {
+  height: 1px;
+  margin: -12px 0 0;
+  border: none;
+  background: $line;
+}
+
+.desktopTGrid {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+}
+
+.desktopTCard {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid $line;
+  border-radius: 20px;
+  background: $bg;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.desktopTStars {
+  margin: 0;
+  font-family: $sans, "Noto Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: $tStar;
+}
+
+.desktopTLabel {
+  margin: 0;
+  font-family: $sans;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #717171;
+}
+
+.desktopTQuote {
+  margin: 0;
+  padding-top: 4px;
+  font-family: $serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: calc(29.45 / 19);
+  color: #1a1818;
+}
+
+.desktopTAuthor {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 18px;
+}
+
+.desktopTAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 20px;
+  background: #e7e1d8;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.desktopTAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.desktopTName {
+  margin: 0;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1818;
+}
+
+.desktopTDetail {
+  margin: 0;
+  font-family: $sans;
+  font-size: 11px;
+  font-weight: 400;
+  color: $tMuted;
+}
+
+.desktopFaq {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  // border: 1px solid $line;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.desktopFaqTitle {
+  margin: 0 auto;
+  font-family: $serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  color: $faqMuted;
+}
+
+.desktopFaqRule {
+  height: 1px;
+  margin: -12px 0 0;
+  border: none;
+  background: $line;
+}
+
+.desktopFaqList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.desktopFaqItem {
+  padding: 0 8px;
+}
+
+.desktopFaqSep {
+  height: 0.8px;
+  margin: 0 0 32px;
+  border: none;
+  background: $line;
+}
+
+.desktopFaqQRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.desktopFaqQ {
+  flex: 1;
+  font-family: $serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $ink;
+}
+
+.desktopFaqCaret,
+.desktopFaqCaretUp {
+  flex-shrink: 0;
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.desktopFaqCaretUp svg {
+  transform: rotate(180deg);
+}
+
+.desktopFaqA {
+  margin: 16px 0 0;
+  padding: 0 4px;
+  font-family: $sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $muted;
+}
+
+/* Express PaymentElement shell — desktop Figma */
+.paymentExpressTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.paymentExpressHeadline {
+  margin: 0;
+  font-family: $serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  color: $ink;
+  width: 100%;
+}
+
+.paymentExpressSubline {
+  margin: 0;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $muted;
+  width: 100%;
+}
+
+.expressTrustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.expressTrustChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(231, 225, 216, 0.5);
+  background: #fff;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $muted;
+}
+
+.expressTrustDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: $green;
+}
+
+@media (max-width: 1100px) {
+  .desktopTopSplit {
+    flex-direction: column;
+  }
+
+  .desktopColSticky {
+    width: 100%;
+  }
+
+  .desktopTGrid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+  .desktopShell {
+    padding: 48px 24px 64px;
+  }
+
+  .desktopMathWrap,
+  .desktopTWrap,
+  .desktopFaq {
+    padding: 32px 24px;
+  }
+
+  .desktopMathCols {
+    flex-direction: column;
+  }
+}

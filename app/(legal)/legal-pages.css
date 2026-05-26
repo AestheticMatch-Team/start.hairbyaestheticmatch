@@ -1,0 +1,37 @@
+/**
+ * Typography tokens for terms / privacy / medical-disclaimer (from main app globals.scss).
+ */
+.legalPages {
+  --legal-title-color: #5a7a96; /* $steel — LanderHero */
+  --h1-line-height: 110%;
+  --h2-line-height: 120%;
+  --body-line-height: 150%;
+  --h1-font-size: 64px;
+  --h2-font-size: 34px;
+  --body-font-size: 17px;
+  min-height: 100vh;
+  background: #fffefc;
+  color: #1a1609;
+}
+
+@media screen and (max-width: 768px) {
+  .legalPages {
+    --h1-font-size: 38px;
+    --h2-font-size: 30px;
+    --body-font-size: 15px;
+  }
+}
+
+/* Lander globals.css resets lists; legal content needs bullets */
+.legalPages ul {
+  list-style: disc;
+}
+
+.legalPages ol {
+  list-style: decimal;
+}
+
+.legalPages a {
+  text-decoration: underline;
+  color: #1b5454;
+}

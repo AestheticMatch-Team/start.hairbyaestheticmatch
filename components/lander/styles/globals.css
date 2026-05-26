@@ -1,6 +1,8 @@
 /* Lander design tokens + base reset (main app provides these via app/globals.scss) */
 @layer base {
   :root {
+    /* Lander tokens use --font-manrope-lander; funnel SCSS uses --font-manrope (main app) */
+    --font-manrope-lander: var(--font-manrope);
     --lander-navy: #1a2332;
     --lander-navy-hover: #131b27;
     --lander-steel: #5a7a96;

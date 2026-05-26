@@ -1,32 +1,22 @@
 /**
- * Handoff from this lander to the main AestheticMatch Hair funnel.
-
+ * Funnel URLs for the affiliate deploy (full funnel on start.*).
+ * Legal pages: `/terms`, `/privacy`, `/medical-disclaimer` on this host.
  */
-
-export function hairFunnelOrigin(): string {
-  const raw = process.env.NEXT_PUBLIC_HAIR_FUNNEL_ORIGIN?.trim();
-  return (raw || "https://hairbyaestheticmatch.com").replace(/\/$/, "");
-}
 
 export function landerOrigin(): string {
   const raw = process.env.NEXT_PUBLIC_LANDER_ORIGIN?.trim();
   return (raw || "https://start.hairbyaestheticmatch.com").replace(/\/$/, "");
 }
 
-export function affiliateUtms(): Record<string, string> {
-  return {
-    utm_source: process.env.NEXT_PUBLIC_UTM_SOURCE?.trim() || "start",
-    utm_medium: process.env.NEXT_PUBLIC_UTM_MEDIUM?.trim() || "affiliate",
-    utm_campaign: process.env.NEXT_PUBLIC_UTM_CAMPAIGN?.trim() || "hair_lander",
-  };
+export function getStartedHref(extra?: Record<string, string>): string {
+  if (!extra || Object.keys(extra).length === 0) return "/get-started";
+  const params = new URLSearchParams(extra);
+  const qs = params.toString();
+  return qs ? `/get-started?${qs}` : "/get-started";
 }
 
-export function hairFunnelPath(path: string): string {
+export function funnelStepHref(path: string, query?: string): string {
   const p = path.startsWith("/") ? path : `/${path}`;
-  return `${hairFunnelOrigin()}${p}`;
-}
-
-export function hairGetStartedUrl(extra?: Record<string, string>): string {
-  const params = new URLSearchParams({ ...affiliateUtms(), ...extra });
-  return `${hairFunnelPath("/get-started")}?${params.toString()}`;
+  const qs = query ? (query.startsWith("?") ? query : `?${query}`) : "";
+  return `${p}${qs}`;
 }

@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "IvyPresto Display";
+  src:
+    url("/fonts/ivy/IvyPrestoDisplay-Regular.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoDisplay-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Display";
+  src:
+    url("/fonts/ivy/IvyPrestoDisplay-RegularItalic.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoDisplay-RegularItalic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Headline";
+  src:
+    url("/fonts/ivy/IvyPrestoHeadline-Thin.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoHeadline-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Headline";
+  src:
+    url("/fonts/ivy/IvyPrestoHeadline-Light.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoHeadline-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Headline";
+  src:
+    url("/fonts/ivy/IvyPrestoHeadline-Regular.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoHeadline-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Headline";
+  src:
+    url("/fonts/ivy/IvyPrestoHeadline-SemiBold.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoHeadline-SemiBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Display";
+  src:
+    url("/fonts/ivy/IvyPrestoDisplay-Thin.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoDisplay-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Display";
+  src:
+    url("/fonts/ivy/IvyPrestoDisplay-Light.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoDisplay-Light.otf") format("opentype");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Display";
+  src:
+    url("/fonts/ivy/IvyPrestoDisplay-SemiBold.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoDisplay-SemiBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Text";
+  src:
+    url("/fonts/ivy/IvyPrestoText-Thin.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoText-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Text";
+  src:
+    url("/fonts/ivy/IvyPrestoText-Light.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoText-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Text";
+  src:
+    url("/fonts/ivy/IvyPrestoText-Regular.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoText-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyPresto Text";
+  src:
+    url("/fonts/ivy/IvyPrestoText-SemiBold.woff2") format("woff2"),
+    url("/fonts/ivy/IvyPrestoText-SemiBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Display";
+  src:
+    url("/fonts/ivy/IvyOraDisplay-Thin.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraDisplay-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Display";
+  src:
+    url("/fonts/ivy/IvyOraDisplay-Light.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraDisplay-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Display";
+  src:
+    url("/fonts/ivy/IvyOraDisplay-Regular.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraDisplay-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Display";
+  src:
+    url("/fonts/ivy/IvyOraDisplay-Medium.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraDisplay-Medium.otf") format("opentype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Text";
+  src:
+    url("/fonts/ivy/IvyOraText-Thin.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraText-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Text";
+  src:
+    url("/fonts/ivy/IvyOraText-Light.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraText-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Text";
+  src:
+    url("/fonts/ivy/IvyOraText-Regular.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraText-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IvyOra Text";
+  src:
+    url("/fonts/ivy/IvyOraText-Medium.woff2") format("woff2"),
+    url("/fonts/ivy/IvyOraText-Medium.otf") format("opentype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ivy Journal";
+  src:
+    url("/fonts/ivy/IvyJournal-Thin.woff2") format("woff2"),
+    url("/fonts/ivy/IvyJournal-Thin.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ivy Journal";
+  src:
+    url("/fonts/ivy/IvyJournal-Light.woff2") format("woff2"),
+    url("/fonts/ivy/IvyJournal-Light.otf") format("opentype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ivy Journal";
+  src:
+    url("/fonts/ivy/IvyJournal-Regular.woff2") format("woff2"),
+    url("/fonts/ivy/IvyJournal-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ivy Journal";
+  src:
+    url("/fonts/ivy/IvyJournal-SemiBold.woff2") format("woff2"),
+    url("/fonts/ivy/IvyJournal-SemiBold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* Preconnect not required for self-hosted /fonts/ivy */

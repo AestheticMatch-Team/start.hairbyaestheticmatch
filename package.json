@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "@stripe/react-stripe-js": "^6.1.0",
+    "@stripe/stripe-js": "^9.1.0",
+    "clsx": "^2.1.1",
+    "heic2any": "^0.0.4",
     "next": "^15.5.9",
+    "react-hot-toast": "^2.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.88.0"

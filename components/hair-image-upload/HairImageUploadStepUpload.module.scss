@@ -1,0 +1,750 @@
+// Figma desktop 879:2394; mobile 879:2796
+$bp-desktop: 1280px;
+$mq-mobile-only: "(max-width: #{$bp-desktop - 1px})";
+
+$text: #111;
+$text-muted: #6b6b6b;
+$navy: #1a2332;
+$steel: #5a7a96;
+$intro: #1a1818;
+$border: rgba(26, 35, 50, 0.08);
+$tint-bg: rgba(90, 122, 150, 0.08);
+/** Pose “done” ring, dashed dropzone accent, spinner — AM hair verification blue */
+$dash: $steel;
+$icon-bg: #fafafa;
+$icon-border: #e5f1ee;
+
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.backLink {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.backLink:focus-visible {
+  outline: 2px solid $navy;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.chevron {
+  display: block;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+
+}
+
+.backLabel {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 440px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: $text-muted;
+
+  @media (min-width: $bp-desktop) {
+    flex: none;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+.split {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 40px;
+
+  @media (min-width: $bp-desktop) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 100px;
+  }
+}
+
+.left {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $bp-desktop) {
+    max-width: 480px;
+    flex-shrink: 0;
+    gap: 40px;
+  }
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: #e7e1d8;
+
+  @media (min-width: $bp-desktop) {
+    width: 1px;
+    height: auto;
+    align-self: stretch;
+    min-height: 400px;
+    background: rgba(26, 35, 50, 0.12);
+  }
+}
+
+.right {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  flex-direction: column;
+}
+
+.introBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: $bp-desktop) {
+    gap: 20px;
+    align-items: stretch;
+    text-align: left;
+  }
+}
+
+.heroTitle {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-size: 40px;
+  line-height: 1.5;
+
+  @media (min-width: $bp-desktop) {
+    text-align: left;
+    font-size: clamp(36px, 8vw, 56px);
+  }
+}
+
+.heroPlain {
+  color: $intro;
+  font-style: normal;
+}
+
+.heroAccent {
+  color: $steel;
+  font-style: italic;
+}
+
+.blurb {
+  margin: 0;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-muted;
+  text-align: center;
+
+  @media (min-width: $bp-desktop) {
+    text-align: left;
+  }
+}
+
+.leftLower {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $bp-desktop) {
+    gap: 40px;
+  }
+}
+
+.posesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.posesLabel {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.14px;
+  text-transform: uppercase;
+  color: $text-muted;
+}
+
+.poseGrid {
+  width: 100%;
+
+  @media #{$mq-mobile-only} {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  @media (min-width: $bp-desktop) {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+.poseRow {
+  @media #{$mq-mobile-only} {
+    display: contents;
+  }
+
+  @media (min-width: $bp-desktop) {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+  }
+}
+
+.poseCell {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid $border;
+  background: $tint-bg;
+  cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @media (min-width: $bp-desktop) {
+    flex: 1 1 0;
+    border-radius: 12px;
+  }
+}
+
+.poseCell:focus-visible {
+  outline: 2px solid $navy;
+  outline-offset: 2px;
+}
+
+.poseCellSelected {
+  background: #fff;
+  border-color: $navy;
+}
+
+.poseCellHasPreview.poseCellSelected,
+.poseCellHasPreview.donorSelected {
+  background: transparent;
+}
+
+.poseCellDone {
+  border-color: $dash;
+}
+
+.poseCellHasPreview {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 0;
+}
+
+.poseThumbPreview {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.poseDoneMark {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: $dash;
+  color: #fff;
+  pointer-events: none;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.poseCellLabel {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  color: $text-muted;
+}
+
+.poseCellHasPreview .poseCellLabel {
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 0;
+  max-width: none;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.94);
+  color: $text;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+
+  @media (min-width: $bp-desktop) {
+    padding: 6px 8px;
+    border-radius: 0 0 11px 11px;
+    font-size: 14px;
+  }
+}
+
+.poseCell:not(.donorCell).poseCellHasPreview {
+  @media #{$mq-mobile-only} {
+    border-radius: 14px 14px 12px 12px;
+  }
+}
+
+.donorCell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid $border;
+  background: $tint-bg;
+  cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @media #{$mq-mobile-only} {
+    min-width: 0;
+  }
+
+  @media (min-width: $bp-desktop) {
+    width: 110px;
+    max-width: 40%;
+    align-self: flex-start;
+    border-radius: 12px;
+  }
+}
+
+.donorCell.poseCellHasPreview {
+  padding: 0;
+}
+
+.donorCell:focus-visible {
+  outline: 2px solid $navy;
+  outline-offset: 2px;
+}
+
+.donorSelected {
+  background: #fff;
+  border-color: $navy;
+}
+
+.checklist {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid $border;
+  background: $tint-bg;
+  box-sizing: border-box;
+}
+
+.checklistHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+
+  @media (min-width: $bp-desktop) {
+    justify-content: flex-start;
+  }
+}
+
+.infoIcon {
+  display: block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.checklistTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $text;
+  text-align: center;
+
+  @media (min-width: $bp-desktop) {
+    white-space: nowrap;
+    text-align: left;
+  }
+}
+
+.checklistList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 100px;
+  background: #fff;
+}
+
+.checkIcon {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.rowText {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $text-muted;
+}
+
+.uploadPanel {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid $border;
+  background: $tint-bg;
+  box-sizing: border-box;
+
+  @media (min-width: $bp-desktop) {
+    gap: 32px;
+    min-height: 706px;
+    padding: 40px;
+    border-radius: 42px;
+  }
+}
+
+.uploadHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.uploadTitle {
+  margin: 0;
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: $text;
+}
+
+.uploadSubtitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  color: $text-muted;
+}
+
+.dropzone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 350px;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1.5px dashed $dash;
+  background: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+
+  @media (min-width: $bp-desktop) {
+    flex: 1 1 auto;
+    min-height: 200px;
+    border-radius: 32px;
+  }
+}
+
+.dropzoneFilled {
+  padding: 0;
+  border-style: solid;
+  border-color: $dash;
+  min-height: 280px;
+
+  @media (min-width: $bp-desktop) {
+    min-height: 360px;
+  }
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+
+  @media (min-width: $bp-desktop) {
+    min-height: 360px;
+  }
+}
+
+.reuploadBtn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid $icon-border;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: $text;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+}
+
+.reuploadBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.reuploadBtn:focus-visible {
+  outline: 2px solid $navy;
+  outline-offset: 2px;
+}
+
+.uploadOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes hair-upload-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid rgba(90, 122, 150, 0.22);
+  border-top-color: $steel;
+  border-radius: 50%;
+  animation: hair-upload-spin 0.8s linear infinite;
+}
+
+.photosLoading {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 20px;
+  border: 1px solid $border;
+  background: #fff;
+  box-sizing: border-box;
+
+  @media (min-width: $bp-desktop) {
+    flex: 1 1 auto;
+    min-height: 360px;
+    border-radius: 32px;
+  }
+}
+
+.photosLoadingText {
+  margin: 0;
+  font-size: 15px;
+  color: $text-muted;
+}
+
+.dropzone:focus-visible {
+  outline: 2px solid $navy;
+  outline-offset: 2px;
+}
+
+.dropInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.exportIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 100px;
+  border: 1px solid $icon-border;
+  background: $icon-bg;
+
+  @media (min-width: $bp-desktop) {
+    padding: 16px;
+  }
+}
+
+.exportIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  @media (min-width: $bp-desktop) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.formats {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  color: $text-muted;
+}
+
+.dragRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.dragMuted {
+  margin: 0;
+  color: $text-muted;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.linkFake {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: $steel;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.linkFake:focus-visible {
+  outline: 2px solid $navy;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.errorBanner {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  color: #b42318;
+}

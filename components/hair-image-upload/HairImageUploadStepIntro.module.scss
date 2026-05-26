@@ -1,0 +1,587 @@
+// Figma: mobile 879:2586, desktop 879:2250
+$bp-desktop: 1280px;
+
+$page-bg: #f7f7f6;
+$text: #111;
+$text-muted: #6b6b6b;
+$navy: #1a2332;
+$steel: #5a7a96;
+$intro: #1a1818;
+$border: rgba(26, 35, 50, 0.08);
+$border-header: rgba(0, 0, 0, 0.06);
+$tint-bg: rgba(90, 122, 150, 0.08);
+$icon-ring: rgba(90, 122, 150, 0.12);
+$required: rgba(26, 22, 9, 0.3);
+$tip-text: #515151;
+$kicker: #1a2332;
+
+$page-pad-x-mobile: 24px;
+$page-pad-x-desktop: 65px;
+
+.inner {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $bp-desktop) {
+    max-width: 1000px;
+    gap: 50px;
+  }
+}
+
+.hero {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.kicker {
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.14px;
+  text-transform: uppercase;
+  color: $kicker;
+  text-align: center;
+}
+
+.heroStack {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  @media (min-width: $bp-desktop) {
+    gap: 20px;
+  }
+}
+
+.heroTitleWrap {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 0;
+}
+
+.heroTitle {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-instrument-serif), "Instrument Serif", serif;
+  font-size: 40px;
+  line-height: 1.5;
+
+  @media (min-width: $bp-desktop) {
+    font-size: clamp(36px, 8vw, 56px);
+  }
+}
+
+.heroTitlePlain {
+  color: $intro;
+  font-style: normal;
+}
+
+.heroTitleAccent {
+  color: $steel;
+  font-style: italic;
+}
+
+.intro {
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: $text-muted;
+  text-align: center;
+}
+
+.contentCol {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.encryptBanner {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  border-radius: 14px;
+  border: 1px solid $border;
+  background: $tint-bg;
+  padding: 16px 20px 16px 16px;
+
+  @media (min-width: $bp-desktop) {
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 16px;
+    padding: 18px 32px;
+  }
+}
+
+.lockFrame {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 4px;
+}
+
+.encryptText {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-muted;
+
+  @media (min-width: $bp-desktop) {
+    flex: none;
+    text-align: center;
+  }
+}
+
+.countRow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0 8px;
+
+  @media (min-width: $bp-desktop) {
+    padding: 0;
+  }
+}
+
+.countLabel {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: $text-muted;
+  white-space: nowrap;
+
+  @media (min-width: $bp-desktop) {
+    font-size: 14px;
+    letter-spacing: 0.14px;
+  }
+}
+
+.uploadBlock {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cardsStack {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: $bp-desktop) {
+    gap: 20px;
+  }
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (min-width: $bp-desktop) {
+    gap: 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.donorRow {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+
+  @media (min-width: $bp-desktop) {
+    max-width: 235px;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid $border;
+  background: #fff;
+  padding: 24px;
+
+  @media (min-width: $bp-desktop) {
+    padding: 32px;
+  }
+}
+
+.cardDonor {
+  width: 163px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 24px 22px;
+
+  @media (min-width: $bp-desktop) {
+    width: 235px;
+    max-width: 235px;
+    padding: 32px;
+  }
+}
+
+/** Uploaded / in-progress preview: hide empty-state chrome; label sits on a readable strip */
+.cardHasPreview {
+  padding: 0;
+  overflow: hidden;
+}
+
+.cardHasPreview .previewLayer {
+  border-radius: inherit;
+}
+
+.cardHasPreview .cardBody {
+  align-self: stretch;
+  width: 100%;
+  gap: 0;
+}
+
+.cardHasPreview .cardTrigger {
+  flex: 1;
+  min-height: 152px;
+  justify-content: flex-end;
+  padding: 14px;
+  gap: 0;
+
+  @media (min-width: $bp-desktop) {
+    min-height: 176px;
+    padding: 18px;
+  }
+}
+
+.cardHasPreview .iconWrap,
+.cardHasPreview .cardDesc,
+.cardHasPreview .cardDescDonor,
+.cardHasPreview .requiredRow {
+  display: none;
+}
+
+.cardHasPreview .cardCopy {
+  width: 100%;
+  gap: 0;
+}
+
+.cardHasPreview .cardCopyInner {
+  align-items: center;
+}
+
+.cardHasPreview .cardTitle {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 18px rgba(17, 17, 17, 0.12);
+}
+
+.previewLayer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.previewImage {
+  object-fit: cover;
+}
+
+.previewGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.cardBody {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cardTrigger {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+
+  @media (min-width: $bp-desktop) {
+    gap: 20px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $navy;
+    outline-offset: 2px;
+  }
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid $icon-ring;
+  background: $tint-bg;
+  padding: 12px;
+
+  @media (min-width: $bp-desktop) {
+    padding: 14px;
+  }
+}
+
+.cardCopy {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardCopyInner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cardTitle {
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text;
+  text-align: center;
+}
+
+.cardTitleDonor {
+  /* 16px mobile (879:2646), 18px desktop */
+  @media (min-width: $bp-desktop) {
+    font-size: 18px;
+  }
+}
+
+.cardDesc {
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: $text-muted;
+  text-align: center;
+}
+
+.cardDescDonor {
+  font-size: 13px;
+}
+
+.requiredRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dotWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+}
+
+.dotImg {
+  display: block;
+  width: 8px;
+  height: 8px;
+}
+
+.requiredLabel {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: $required;
+  white-space: nowrap;
+}
+
+.errorText {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #b42318;
+}
+
+.tips {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid $border;
+  background: $tint-bg;
+  padding: 32px;
+
+  @media (min-width: $bp-desktop) {
+    border-radius: 24px;
+  }
+}
+
+.tipsInner {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tipsHeading {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $text;
+  white-space: normal;
+
+  @media (min-width: $bp-desktop) {
+    white-space: nowrap;
+  }
+}
+
+.tipsList {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tipRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.tipIcon {
+  display: flex;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 11px;
+}
+
+.tipCheck {
+  width: 16px;
+  height: 16px;
+}
+
+.tipText {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $tip-text;
+}
+
+.profileWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+
+  @media (min-width: $bp-desktop) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.profileImg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  max-width: none;
+
+  @media (min-width: $bp-desktop) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.lockOuter {
+  position: relative;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.lockInset {
+  position: absolute;
+  inset: 8.33%;
+}
+
+.lockImgPad {
+  position: absolute;
+  inset: -4.5%;
+}
+
+.lockImg {
+  width: 100%;
+  height: 100%;
+}

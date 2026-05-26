@@ -2,8 +2,6 @@
 
 import { useState, useId } from "react";
 import styles from "./LanderFooter.module.scss";
-import { hairFunnelPath } from "@/lib/funnel";
-
 function ChevronIcon() {
   return (
     <svg
@@ -100,9 +98,9 @@ export default function LanderFooter() {
               title="Legal & Compliance"
               smallTitle
               links={[
-                { label: "Privacy Policy", href: hairFunnelPath("/privacy") },
-                { label: "Terms & Conditions", href: hairFunnelPath("/terms") },
-                { label: "Medical Disclaimer", href: hairFunnelPath("/medical-disclaimer") },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms & Conditions", href: "/terms" },
+                { label: "Medical Disclaimer", href: "/medical-disclaimer" },
                 {
                   label: "License",
                   href: "https://creativecommons.org/licenses/by/4.0/",
@@ -121,10 +119,10 @@ export default function LanderFooter() {
             <br className={styles.copyrightBreak} /> All rights reserved.
           </p>
           <div className={styles.bottomLinks}>
-            <a href={hairFunnelPath("/terms")} className={styles.bottomLink}>
+            <a href="/terms" className={styles.bottomLink}>
               Terms &amp; Conditions
             </a>
-            <a href={hairFunnelPath("/privacy")} className={styles.bottomLink}>
+            <a href="/privacy" className={styles.bottomLink}>
               Privacy Policy
             </a>
           </div>
