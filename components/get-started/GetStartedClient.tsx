@@ -292,14 +292,11 @@ export default function GetStartedClient({
         const qs = params.toString();
 
         // Preferred path: follow the Supabase action_link so the user lands on
-        // the next funnel step already authenticated (cookie set in session-bridge).
-        // Falls back to the old client-side push if generateLink failed.
+        // session-bridge on this host (tokens in hash) → setSession → paywall/pre-quiz.
+        // Same as main hair get-started; redirect_to is URL-encoded inside action_link.
         if (signupResult.actionLink) {
-          const bridgeMarker = `${window.location.origin}/auth/session-bridge`;
-          if (signupResult.actionLink.includes(bridgeMarker)) {
-            window.location.href = signupResult.actionLink;
-            return;
-          }
+          window.location.href = signupResult.actionLink;
+          return;
         }
 
         if (isHair) {
