@@ -3,17 +3,7 @@
  * API/auth proxy to aestheticmatchfinal; pages and legal stay on this app.
  */
 
-const TRUE_VALUES = new Set(["1", "true", "yes", "on"]);
-
-function publicFlag(name: string, defaultValue = false): boolean {
-  const raw = process.env[name]?.trim().toLowerCase();
-  return raw ? TRUE_VALUES.has(raw) : defaultValue;
-}
-
-export function clickflareTrackingOrigin(): string {
-  const raw = process.env.NEXT_PUBLIC_CLICKFLARE_TRACKING_ORIGIN?.trim();
-  return (raw || "https://go.consumerwatchtoday.com").replace(/\/$/, "");
-}
+import { clickflareClickUrl, shouldUseClickflareClickUrls } from "@/lib/clickflare";
 
 export function landerOrigin(): string {
   const raw = process.env.NEXT_PUBLIC_LANDER_ORIGIN?.trim();
@@ -34,29 +24,7 @@ export function funnelStepHref(path: string, query?: string): string {
   return `${p}${qs}`;
 }
 
-export function shouldUseClickflareClickUrls(): boolean {
-  return publicFlag("NEXT_PUBLIC_CLICKFLARE_USE_CLICK_URLS", false);
-}
-
-export function shouldLoadClickflareDirectTracking(): boolean {
-  return publicFlag("NEXT_PUBLIC_CLICKFLARE_DIRECT_TRACKING", false);
-}
-
-export function clickflareClickUrl(
-  ctaId: number | string = process.env.NEXT_PUBLIC_CLICKFLARE_CTA_ID?.trim() || "",
-  extra?: Record<string, string>,
-): string {
-  const normalizedCtaId = String(ctaId).trim();
-  const ctaPath = /^[1-9][0-9]*$/.test(normalizedCtaId) ? `/${normalizedCtaId}` : "";
-  const url = new URL(`${clickflareTrackingOrigin()}/cf/click${ctaPath}`);
-
-  Object.entries(extra || {}).forEach(([key, value]) => {
-    if (value) url.searchParams.set(key, value);
-  });
-
-  return url.toString();
-}
-
+/** Lander CTA: ClickFlare click URL when enabled, else local get-started. */
 export function hairGetStartedUrl(
   extra?: Record<string, string>,
   options?: { clickflareCtaId?: number | string },

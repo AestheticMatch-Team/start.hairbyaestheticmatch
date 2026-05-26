@@ -86,6 +86,8 @@ export default function GetStartedClient({
           email: emailValue,
           phone: phoneValue,
           funnel,
+          public_origin:
+            typeof window !== "undefined" ? window.location.origin : undefined,
         }),
       });
       const signupData = (await signupRes.json().catch(() => ({}))) as {
@@ -293,8 +295,11 @@ export default function GetStartedClient({
         // the next funnel step already authenticated (cookie set in session-bridge).
         // Falls back to the old client-side push if generateLink failed.
         if (signupResult.actionLink) {
-          window.location.href = signupResult.actionLink;
-          return;
+          const bridgeMarker = `${window.location.origin}/auth/session-bridge`;
+          if (signupResult.actionLink.includes(bridgeMarker)) {
+            window.location.href = signupResult.actionLink;
+            return;
+          }
         }
 
         if (isHair) {

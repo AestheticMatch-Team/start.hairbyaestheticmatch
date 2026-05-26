@@ -1,8 +1,10 @@
+"use client";
+
 import Script from "next/script";
 import {
   clickflareTrackingOrigin,
   shouldLoadClickflareDirectTracking,
-} from "@/lib/funnel";
+} from "@/lib/clickflare";
 
 const DEFAULT_CLICKFLARE_CAMPAIGN_ID = "6a122a576fdcf70012dc7ab0";
 
