@@ -430,7 +430,7 @@ export default function GetStartedClient({
                 <div className={styles.noticeBox}>
                   Can&apos;t find it? Check spam or promotions. Sent from
                   <br />
-                  <strong>noreply@aestheticmatch.com</strong>
+                  <strong>auth@aestheticmatch.com</strong>
                 </div>
 
                 <div className={styles.linkSentActions}>
