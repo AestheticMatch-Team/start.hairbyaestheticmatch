@@ -11,11 +11,11 @@ export function clickflareTrackingOrigin(): string {
 }
 
 export function shouldUseClickflareClickUrls(): boolean {
-  return publicFlag("NEXT_PUBLIC_CLICKFLARE_USE_CLICK_URLS", false);
+  return !publicFlag("NEXT_PUBLIC_CLICKFLARE_DISABLED", false);
 }
 
 export function shouldLoadClickflareDirectTracking(): boolean {
-  return publicFlag("NEXT_PUBLIC_CLICKFLARE_DIRECT_TRACKING", false);
+  return !publicFlag("NEXT_PUBLIC_CLICKFLARE_DISABLED", false);
 }
 
 export function clickflareClickUrl(

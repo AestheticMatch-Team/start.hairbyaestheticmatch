@@ -19,8 +19,7 @@ ClickFlare campaign is:
 
 ```bash
 NEXT_PUBLIC_CLICKFLARE_CAMPAIGN_ID=6a122a576fdcf70012dc7ab0
-NEXT_PUBLIC_CLICKFLARE_DIRECT_TRACKING=true
-NEXT_PUBLIC_CLICKFLARE_USE_CLICK_URLS=true
+NEXT_PUBLIC_CLICKFLARE_DISABLED=false
 NEXT_PUBLIC_CLICKFLARE_TRACKING_ORIGIN=https://go.consumerwatchtoday.com
 NEXT_PUBLIC_CLICKFLARE_CONTAINER_ID=<container-id>
 NEXT_PUBLIC_CLICKFLARE_CTA_ID=
@@ -29,7 +28,7 @@ NEXT_PUBLIC_CLICKFLARE_CTA_ID=
 Configure the ClickFlare **offer URL** to this deploy’s funnel (not the main hair
 host), including ad UTMs and a click ID when supported, for example:
 
-`https://start.hairbyaestheticmatch.com/get-started?utm_source=...&utm_medium=...&cf_click_id={cf_click_id}`
+`https://start.hairbyaestheticmatch.com/get-started?utm_source=nick_affiliate&utm_medium=affiliate&utm_campaign=hair_lander&utm_content={cf_click_id}&utm_id={cf_click_id}&cf_click_id={cf_click_id}`
 
 `affiliate_partner` is set via `NEXT_PUBLIC_AFFILIATE_PARTNER` at signup — do not
 fake `utm_source=start`. If ClickFlare does not replace macros, keep `cf_click_id`
@@ -99,6 +98,4 @@ Funnel UI is copied from `aestheticmatchfinal` (same components + SCSS). Affilia
 ## Attribution
 
 `affiliate_partner` (default `start`) flows to Monday status + Stripe metadata; ad UTMs pass through only when present in the URL.
-
-
 

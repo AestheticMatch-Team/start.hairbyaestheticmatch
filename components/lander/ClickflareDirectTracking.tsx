@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Script from "next/script";
 import {
   clickflareTrackingOrigin,
@@ -151,7 +152,9 @@ function clickflareScript(): string {
 }
 
 export default function ClickflareDirectTracking() {
-  if (!shouldLoadClickflareDirectTracking()) return null;
+  const pathname = usePathname();
+
+  if (pathname !== "/" || !shouldLoadClickflareDirectTracking()) return null;
 
   return (
     <Script
