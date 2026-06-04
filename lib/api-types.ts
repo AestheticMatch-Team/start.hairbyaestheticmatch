@@ -10,7 +10,9 @@ export type PaywallCheckoutBody = {
   price_variant?: "149" | "79" | "129";
   utm_source?: string;
   utm_campaign?: string;
+  cf_click_id?: string;
   affiliate_partner?: string;
+  [key: string]: unknown;
 };
 
 export type PaywallCheckoutResponse = {

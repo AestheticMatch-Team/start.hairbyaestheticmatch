@@ -12,6 +12,7 @@ import { getTikTokClickIds } from "@/lib/tiktok-tracking";
 import { getRedditClickIds } from "@/lib/reddit-tracking";
 import { getClientNetworkContext, withClientNetworkContext } from "@/lib/client-network-context";
 import { getAffiliateAttribution } from "@/lib/affiliate-attribution";
+import { getClickflareAttribution } from "@/lib/clickflare-attribution";
 import { getUTMParams } from "@/lib/utm-tracking";
 import { buildMetaEventUserData, splitFullNameToMetaFields } from "@/lib/meta-event-user-data";
 import styles from "./page.module.scss";
@@ -227,6 +228,7 @@ export default function HairPaywallPageClient({ resolvedPriceVariant }: HairPayw
         price_variant: String(priceVariant),
         ...getClientNetworkContext(),
         ...getAffiliateAttribution(),
+        ...getClickflareAttribution(),
         ...getUTMParams(true),
       }),
     })

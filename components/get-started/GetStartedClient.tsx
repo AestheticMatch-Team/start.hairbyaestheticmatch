@@ -6,6 +6,7 @@ import { useCallback, useMemo, useState } from "react";
 import styles from "./get-started.module.scss";
 import { getPreQuizVariant, storePreQuizVariant } from "@/lib/pre-quiz-variant";
 import { getAffiliateAttribution } from "@/lib/affiliate-attribution";
+import { getClickflareAttribution } from "@/lib/clickflare-attribution";
 import { getUTMParams } from "@/lib/utm-tracking";
 import { getMetaClickIds } from "@/lib/meta-tracking";
 import { getTikTokClickIds } from "@/lib/tiktok-tracking";
@@ -229,6 +230,7 @@ export default function GetStartedClient({
         const hairPriceVariant = isHair ? readHairPriceVariantCookie() : undefined;
         const funnel: Record<string, string | undefined> = {
           ...getAffiliateAttribution(),
+          ...getClickflareAttribution(),
           ...getUTMParams(true),
           funnel: isHair ? "hair" : "plastics",
           pre_quiz_variant: preQuizVariant,
@@ -694,4 +696,3 @@ export default function GetStartedClient({
     </main>
   );
 }
-
